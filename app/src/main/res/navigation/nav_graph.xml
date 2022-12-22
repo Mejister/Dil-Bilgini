@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/entranceScreenFragment">
+
+    <fragment
+        android:id="@+id/gameScreenFragment"
+        android:name="com.kelimebilmece.gamescreen.GameScreenFragment"
+        android:label="fragment_game_screen"
+        tools:layout="@layout/fragment_game_screen" >
+        <action
+            android:id="@+id/action_gameScreenFragment_to_entranceScreenFragment"
+            app:destination="@id/entranceScreenFragment" />
+        <action
+            android:id="@+id/action_gameScreenFragment_to_endGameScreenFragment"
+            app:destination="@id/endGameScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entranceScreenFragment"
+        android:name="com.kelimebilmece.entrance.EntranceScreenFragment"
+        android:label="fragment_entrance_screen"
+        tools:layout="@layout/fragment_entrance_screen" >
+        <action
+            android:id="@+id/action_entranceScreenFragment_to_gameScreenFragment"
+            app:destination="@id/gameScreenFragment" />
+        <action
+            android:id="@+id/action_entranceScreenFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kelimebilmece.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_entranceScreenFragment"
+            app:destination="@id/entranceScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameScreenFragment"
+        android:name="com.kelimebilmece.endscreen.EndGameScreenFragment"
+        android:label="fragment_end_game_screen"
+        tools:layout="@layout/fragment_end_game_screen" >
+        <action
+            android:id="@+id/action_endGameScreenFragment_to_entranceScreenFragment"
+            app:destination="@id/entranceScreenFragment" />
+    </fragment>
+</navigation>

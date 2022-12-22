@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "343303385999",
+    "project_id": "kelimedoku",
+    "storage_bucket": "kelimedoku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343303385999:android:51eaf2379fc9465fc651fa",
+        "android_client_info": {
+          "package_name": "com.example.kelimebilmece"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343303385999-3gf65f7cj2ikhidhjmufk7t1102uv85h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kelimebilmece",
+            "certificate_hash": "d8a8b31907c504829dd1f5a9c1bfad9211ffaac1"
+          }
+        },
+        {
+          "client_id": "343303385999-2lte2uekvatp63rrodkncqsgj2vorb47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj9gmAfwLPJpwW10L4MNllClM3loMqXIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343303385999-2lte2uekvatp63rrodkncqsgj2vorb47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

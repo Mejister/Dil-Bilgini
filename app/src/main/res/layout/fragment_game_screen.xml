@@ -1,0 +1,220 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kelimebilmece.gamescreen.GameScreenFragment"
+    android:background="@drawable/bg_11" >
+
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/fui_transparent"
+        android:id="@+id/cvQuestionPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center">
+
+            <TextView
+                android:textColor="#E3D136"
+                android:id="@+id/tvQuestionPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="Soru Puanı"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvQuestionPointNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvQuestionPointNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuestionPoint"
+                tools:text="1000" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/mTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:background="?android:attr/detailsElementBackground"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#63F13B"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/cvTotalPoint"
+        app:layout_constraintStart_toEndOf="@+id/cvQuestionPoint"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Time" />
+
+    <TextView
+        android:id="@+id/tvWhichQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+@string/question_text"
+        android:textColor="#9C27B0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cvTotalPoint"
+        app:layout_constraintTop_toBottomOf="@+id/mTextField"
+        app:layout_constraintStart_toEndOf="@+id/cvQuestionPoint"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTotalPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/tvTotalPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="Toplam Puan"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvTotalPointNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTotalPointNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalPoint"
+                tools:text="5000" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvQestionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/mTextField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvQuestionPoint"
+        tools:text="Buraya Soru Gelecek"
+        android:text="ASDAD ASDASDADS asdasdad?"/>
+
+
+
+    <EditText
+
+        android:enabled="true"
+        android:id="@+id/tvAnswerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="40dp"
+        android:elegantTextHeight="true"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:letterSpacing="0.25"
+        android:minHeight="80dp"
+        android:scaleY="1.5"
+        android:textSize="38sp"
+        android:paddingStart="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
+
+        />
+
+    <EditText
+        android:paddingStart="30dp"
+        android:id="@+id/etAnswerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="40dp"
+        android:elegantTextHeight="true"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:letterSpacing="0.25"
+        android:minHeight="80dp"
+        android:scaleY="1.5"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="@id/tvAnswerText"
+        app:layout_constraintStart_toStartOf="@id/tvAnswerText"
+        app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
+        tools:text="___"
+        />
+
+
+    <Button
+        android:id="@+id/btnOnayla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="48dp"
+        android:text="ONAYLA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswerText" />
+
+    <Button
+        android:id="@+id/btnipucu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="60dp"
+        android:text="İPUCU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswerText" />
+
+    <Button
+        android:id="@+id/btnHile"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="hile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
