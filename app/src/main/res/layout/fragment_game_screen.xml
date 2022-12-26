@@ -164,7 +164,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
-
+        android:textColor="#00327C"
         />
 
     <EditText
@@ -185,6 +185,7 @@
         app:layout_constraintStart_toStartOf="@id/tvAnswerText"
         app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
         tools:text="___"
+        android:textColor="#2E1039"
         />
 
 
@@ -208,6 +209,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswerText" />
 
+<!--
+                SSSsilllllll
     <Button
         android:id="@+id/btnHile"
         android:layout_width="70dp"
@@ -215,6 +218,7 @@
         android:text="hile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

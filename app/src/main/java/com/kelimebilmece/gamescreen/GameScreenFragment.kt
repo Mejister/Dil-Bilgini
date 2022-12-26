@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -27,7 +28,6 @@ class GameScreenFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -38,8 +38,6 @@ class GameScreenFragment : Fragment() {
         return binding.root
 
     }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
@@ -49,11 +47,9 @@ class GameScreenFragment : Fragment() {
                 viewModel.uiState.collect { uiState ->
 
                     when (uiState) {
-                        GameScreenUiState.Game -> {
-                           viewModel.mainTimer.start()
-                        }
+                        GameScreenUiState.Game -> {}
                         GameScreenUiState.Result -> {
-                            findNavController().navigate(R.id.action_gameScreenFragment_to_endGameScreenFragment)
+                            findNavController().navigate(R.id.action_gameScreenFragment_to_endGameScreenFragment, bundleOf("point" to viewModel._state.value.totalPoint))
                         }
                     }
                 }
@@ -62,8 +58,6 @@ class GameScreenFragment : Fragment() {
 
                 launch {
                     viewModel._state.collect{
-                      //  binding.mTextField.text=it.
-                        binding.mTextField.text=it.time.toString()
                         binding.tvQestionText.text=it.questionEntity.question
                         binding.tvQuestionPointNumber.text=it.point.toString()
                         binding.tvTotalPointNumber.text=it.totalPoint.toString()
@@ -72,47 +66,36 @@ class GameScreenFragment : Fragment() {
                         }
                         binding.tvWhichQuestion.text= getString(R.string.question_text, (it.questionNumber+1))
 
+                        binding.mTextField.text=it.duration.toString()
 
-                     ///neden kızıyor?   binding.tvWhichQuestion.text=(it.questionNumber+1).toString()+getString(R.string.question_text)
-
-                       binding.tvAnswerText.setText(it.tipAnswer)
+                        binding.tvAnswerText.setText(it.tipAnswer)
 
 
                     }
                 }
-
             }
         }
         binding.etAnswerText.doAfterTextChanged {
             viewModel.setAnswerText(
                 it.toString())
         }
-        //sill-------
+       /* //sill-------
         binding.btnHile.setOnClickListener {
             viewModel.NextQuestion()
-        }
 
+        //    findNavController().navigate(R.id.action_gameScreenFragment_to_endGameScreenFragment,
+         //      bundleOf("point" to viewModel._state.value.totalPoint))
 
+        }*/
 
+                     binding.btnOnayla.setOnClickListener {
+                         viewModel.CheckAnswer()
+                     }
 
-
-        binding.btnOnayla.setOnClickListener{
-
-                viewModel.CheckAnswer()
-
-                viewModel.secondaryTimer.start()
-                viewModel.mainTimer.cancel()
-
-         if(GamesScreenDataState().questionEntity.answer.length>4) {
-             findNavController().navigate(R.id.action_gameScreenFragment_to_endGameScreenFragment)
-         }
-        }
-
-        binding.btnipucu.setOnClickListener{
-     //    findNavController().navigate( R.id.action_gameScreenFragment_to_entranceScreenFragment)
+            binding.btnipucu.setOnClickListener{
            viewModel.Tip()
         }
-    }
 
+    }
 }
 
