@@ -1,8 +1,8 @@
-package com.kelimebilmece.room
+package com.test.kelimebilgini.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+
 
 
 @Database(entities =[QuestionEntity::class] , version = 1, exportSchema = false)

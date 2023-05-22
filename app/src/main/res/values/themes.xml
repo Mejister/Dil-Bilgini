@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.KelimeBilmece" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.test.kelimebilgini" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#102433</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -10,7 +10,22 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">#102433</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@color/splashcolor</item>
+
     </style>
 </resources>
+
+<!--
+    &lt;!&ndash; My custom theme for splash screen activity &ndash;&gt;
+<item name="android:windowBackground">@color/greeny</item>
+    &lt;!&ndash; Set a transparent .png as your icon &ndash;&gt;
+<item name="android:windowSplashScreenAnimatedIcon">@mipmap/karma_round</item>
+    &lt;!&ndash;item yazısı &ndash;&gt;
+<item name="android:windowSplashScreenBrandingImage">@color/purple_500</item>
+-->
+
+
+

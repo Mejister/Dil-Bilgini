@@ -1,10 +1,10 @@
-package com.kelimebilmece.di
+package com.test.kelimebilgini.di
 
 
-import com.kelimebilmece.remotefirebase.ApiService
-import com.kelimebilmece.repository.QuestionRepository
-import com.kelimebilmece.repository.QuestionRepositoryImpl
-import com.kelimebilmece.room.RoomDB
+import com.test.kelimebilgini.remotefirebase.ApiService
+import com.test.kelimebilgini.repository.QuestionRepository
+import com.test.kelimebilgini.repository.QuestionRepositoryImpl
+import com.test.kelimebilgini.room.RoomDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.kelimebilmece.model
+package com.test.kelimebilgini.model
 
 
 

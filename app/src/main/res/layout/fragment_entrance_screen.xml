@@ -3,51 +3,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kelimebilmece.entrance.EntranceScreenFragment">
+    android:background="@drawable/enters_bg"
+    tools:context="com.test.kelimebilgini.entrance.EntranceScreenFragment">
 
-    <TextView
-        android:id="@+id/tvHoşgeldiniz"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/entrance_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Oyun ismi Hoşgeldiniz"
+        android:layout_height="80dp"
+        android:background="#102433"
         android:textAlignment="center"
-        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvHoşgeldiniz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:letterSpacing="0.1"
+            android:text="DİL BİLGİNİ"
+            android:textAlignment="center"
+            android:textColor="#D5F1F8"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btnYeniOyun"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
-        android:text="Yeni Oyun"
+        android:paddingVertical="4dp"
+        android:text="YENİ OYUN"
+        android:textAllCaps="false"
+        android:textColor="#D5F1F8"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHoşgeldiniz" />
+        app:layout_constraintTop_toBottomOf="@+id/entrance_toolbar" />
 
     <Button
         android:id="@+id/btnAyarlar"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
+        android:paddingVertical="4dp"
         android:text="Ayarlar"
+        android:textColor="#D5F1F8"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnYeniOyun" />
 
     <Button
         android:id="@+id/btnHakkında"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
+        android:paddingVertical="4dp"
         android:text="Hakkında"
+        android:textColor="#D5F1F8"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAyarlar" />
+
+    <Button
+        android:id="@+id/btnOynanıs"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp"
+        android:text="Oynanış"
+        android:textColor="#D5F1F8"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHakkında" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

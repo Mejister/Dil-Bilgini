@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.kelimebilmece'
+    namespace 'com.test.kelimebilgini'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.kelimebilmece"
+        applicationId "com.test.kelimebilgini"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -67,6 +67,13 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation platform('com.google.firebase:firebase-bom:31.0.3')
+
+  //  implementation platform('com.google.firebase:firebase-bom:30.2.0')
+  //  implementation 'com.google.firebase:firebase-core'
+  //  implementation('com.google.firebase:firebase-auth')
+            {
+        exclude module: "play-services-safetynet"
+    }
 
     //room
    // val room_version = "2.4.3"

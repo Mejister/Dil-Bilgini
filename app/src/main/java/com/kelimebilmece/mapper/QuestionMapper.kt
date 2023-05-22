@@ -1,7 +1,7 @@
-package com.kelimebilmece.mapper
+package com.test.kelimebilgini.mapper
 
-import com.kelimebilmece.model.QuestionClass
-import com.kelimebilmece.room.QuestionEntity
+import com.test.kelimebilgini.model.QuestionClass
+import com.test.kelimebilgini.room.QuestionEntity
 import javax.inject.Inject
 
 class QuestionMapper @Inject constructor():EnitityMapper<List<QuestionEntity>,List<QuestionClass>> {

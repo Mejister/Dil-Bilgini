@@ -1,8 +1,8 @@
-package com.kelimebilmece.di
+package com.test.kelimebilgini.di
 
 import android.app.Application
 import androidx.room.Room
-import com.kelimebilmece.room.RoomDB
+import com.test.kelimebilgini.room.RoomDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Kelime Bilmece</string>
+    <string name="app_name">Dil Bilgini</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="about_message"><b>asdasdasdsadasdasdsal</b></string>
+<!--    <string name="about_message"><b>asdasdasdsadasdasdsal</b></string>-->
     <string name="question_text">%d. Soru</string>
+    <string name="kalan_sure">%d  saniye</string>
+    <string name="email"><a href="https://www.google.com/">some link</a></string>
+
 </resources>

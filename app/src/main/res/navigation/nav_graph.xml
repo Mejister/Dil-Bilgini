@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/gameScreenFragment"
-        android:name="com.kelimebilmece.gamescreen.GameScreenFragment"
+        android:name="com.test.kelimebilgini.gamescreen.GameScreenFragment"
         android:label="fragment_game_screen"
         tools:layout="@layout/fragment_game_screen" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/entranceScreenFragment"
-        android:name="com.kelimebilmece.entrance.EntranceScreenFragment"
+        android:name="com.test.kelimebilgini.entrance.EntranceScreenFragment"
         android:label="fragment_entrance_screen"
         tools:layout="@layout/fragment_entrance_screen" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.kelimebilmece.settings.SettingsFragment"
+        android:name="com.test.kelimebilgini.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/endGameScreenFragment"
-        android:name="com.kelimebilmece.endscreen.EndGameScreenFragment"
+        android:name="com.test.kelimebilgini.endscreen.EndGameScreenFragment"
         android:label="fragment_end_game_screen"
         tools:layout="@layout/fragment_end_game_screen" >
         <action

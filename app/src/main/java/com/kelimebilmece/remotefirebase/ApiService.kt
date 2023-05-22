@@ -1,8 +1,8 @@
-package com.kelimebilmece.remotefirebase
+package com.test.kelimebilgini.remotefirebase
 
-import android.util.Log
+
 import com.google.firebase.firestore.FirebaseFirestore
-import com.kelimebilmece.model.QuestionClass
+import com.test.kelimebilgini.model.QuestionClass
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,35 +12,32 @@ class ApiService @Inject constructor(
     private val firebaseFirestore: FirebaseFirestore,
 
 
-) {
+    ) {
 
- /*   private val _firebaseStateFlow: MutableStateFlow<FirebaseState> = MutableStateFlow(InitialState)
-    val firebaseStateFlow: StateFlow<FirebaseState> = _firebaseStateFlow*/
+    /*   private val _firebaseStateFlow: MutableStateFlow<FirebaseState> = MutableStateFlow(InitialState)
+       val firebaseStateFlow: StateFlow<FirebaseState> = _firebaseStateFlow*/
 
 
-
-    suspend fun getQuestions():List<QuestionClass> {
+    suspend fun getQuestions(): List<QuestionClass> {
         val collectionReference = firebaseFirestore
             .collection(Questions)
-    val tempList= mutableListOf<QuestionClass>()
-    collectionReference.get().await().let {
-        querySnapshot->
+        val tempList = mutableListOf<QuestionClass>()
+        collectionReference.get().await().let { querySnapshot ->
             if (querySnapshot != null && !querySnapshot.isEmpty) {
 
 
                 val questions = querySnapshot.documents.map { documentSnapshot ->
-                    documentSnapshot.toObject(QuestionClass::class.java)?:QuestionClass("","")
+                    documentSnapshot.toObject(QuestionClass::class.java) ?: QuestionClass("", "")
                 }
                 tempList.addAll(questions)
             }
 
+        }
+
+        return tempList
+
+
     }
-
-return tempList
-
-
-    }
-
 
 
     companion object {

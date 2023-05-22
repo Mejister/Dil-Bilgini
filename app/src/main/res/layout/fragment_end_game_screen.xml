@@ -3,32 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kelimebilmece.endscreen.EndGameScreenFragment">
+    android:background="@drawable/ends_sset"
+    tools:context="com.test.kelimebilgini.endscreen.EndGameScreenFragment">
 
-    <TextView
-        android:id="@+id/tvCongrats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_horizontal"
-        android:text="TEBRİKLER TÜM SORULARI TAMAMLADINIZ"
-        android:textColor="#9FDF72"
-        android:textSize="32sp"
-        android:textStyle="bold"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ends_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="#102433"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvCongrats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="TEBRİKLER TÜM SORULARI TAMAMLADINIZ"
+            android:textColor="#EBFAF7"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvFinalPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="145dp"
+        android:backgroundTint="@color/fui_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCongrats">
+        app:layout_constraintTop_toBottomOf="@+id/ends_toolbar">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -38,29 +51,75 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Puanınız:"
-                android:textStyle="bold"
+                android:textColor="#EBFAF7"
                 android:textSize="40sp"
-                android:textColor="@color/black"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tvShowScore"
-                android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8456"
-                android:textStyle="bold"
-                android:textSize="40sp"
+                android:layout_marginStart="16dp"
                 android:letterSpacing="0.1"
-                android:textColor="#B325CD"/>
+                android:text="8456"
+                android:textColor="#07DDF8"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFinalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="@color/fui_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvFinalPoint">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kalan Süre:"
+                android:textColor="#EBFAF7"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvShowTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="30  saniye"
+                android:textColor="#07DDF8"
+
+
+                android:textSize="33sp"
+
+                android:textStyle="bold" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnMainMenu"
-        android:layout_marginTop="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTintMode="@null"
+        android:paddingVertical="4dp"
         android:text="Ana Menü"
+        android:textColor="#D5F1F8"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cvFinalPoint" />

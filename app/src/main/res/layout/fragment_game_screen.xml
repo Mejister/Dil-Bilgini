@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kelimebilmece.gamescreen.GameScreenFragment"
-    android:background="@drawable/bg_11" >
+    android:background="@drawable/mainscreen_bg"
+    tools:context="com.test.kelimebilgini.gamescreen.GameScreenFragment">
 
 
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@color/fui_transparent"
         android:id="@+id/cvQuestionPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="48dp"
+        app:cardBackgroundColor="@color/fui_transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,12 +23,12 @@
             android:textAlignment="center">
 
             <TextView
-                android:textColor="#E3D136"
                 android:id="@+id/tvQuestionPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="Soru Puanı"
+                android:textColor="#102433"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/tvQuestionPointNumber"
@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
+                android:textColor="#02243C"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,9 +60,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
-        android:background="?android:attr/detailsElementBackground"
+        android:backgroundTint="@color/fui_transparent"
         android:gravity="center_horizontal|center_vertical"
-        android:textColor="#63F13B"
+        android:textColor="#EDAC29"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/cvTotalPoint"
@@ -73,14 +74,14 @@
         android:id="@+id/tvWhichQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="+@string/question_text"
-        android:textColor="#9C27B0"
+        android:textColor="#950EAC"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toStartOf="@id/cvTotalPoint"
-        app:layout_constraintTop_toBottomOf="@+id/mTextField"
-        app:layout_constraintStart_toEndOf="@+id/cvQuestionPoint"/>
+        app:layout_constraintStart_toEndOf="@+id/cvQuestionPoint"
+        app:layout_constraintTop_toBottomOf="@+id/mTextField" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTotalPoint"
@@ -88,6 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="36dp"
+        app:cardBackgroundColor="@color/fui_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -102,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="Toplam Puan"
+                android:textColor="#102433"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/tvTotalPointNumber"
@@ -115,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -132,89 +136,148 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="48dp"
-        android:fontFamily="sans-serif-condensed"
+        android:layout_marginEnd="6dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="ASDAD ASDASDADS asdasdad?"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/mTextField"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cvQuestionPoint"
-        tools:text="Buraya Soru Gelecek"
-        android:text="ASDAD ASDASDADS asdasdad?"/>
-
+        tools:text="Buraya Soru Gelecek" />
 
 
     <EditText
 
-        android:enabled="true"
         android:id="@+id/tvAnswerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
         android:layout_marginTop="40dp"
+        android:background="@null"
+        android:backgroundTint="#00FFFFFF"
         android:elegantTextHeight="true"
+        android:enabled="true"
         android:fontFamily="monospace"
         android:gravity="start"
+        android:inputType="text|textNoSuggestions"
         android:letterSpacing="0.25"
         android:minHeight="80dp"
-        android:scaleY="1.5"
-        android:textSize="38sp"
         android:paddingStart="30dp"
+        android:scaleY="1.5"
+        android:textColor="#830303"
+        android:textSize="38sp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
 
-        />
+
+        app:layout_constraintTop_toBottomOf="@+id/tvQestionText" />
 
     <EditText
-        android:paddingStart="30dp"
+
+
         android:id="@+id/etAnswerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
         android:layout_marginTop="40dp"
+        android:background="@null"
         android:elegantTextHeight="true"
         android:fontFamily="monospace"
         android:gravity="start"
+        android:inputType="text|textNoSuggestions"
         android:letterSpacing="0.25"
         android:minHeight="80dp"
+        android:paddingStart="30dp"
+        android:privateImeOptions="nm"
         android:scaleY="1.5"
+        android:textColor="#102433"
         android:textSize="38sp"
+        app:backgroundTint="#00FFFFFF"
+
         app:layout_constraintEnd_toEndOf="@id/tvAnswerText"
         app:layout_constraintStart_toStartOf="@id/tvAnswerText"
+
         app:layout_constraintTop_toBottomOf="@+id/tvQestionText"
         tools:text="___"
+
+
         />
+
+
+    <!--
+    android:imeOptions="nm"
+    android:inputType="textPassword|textVisiblePassword"
+    android:inputType="text|textNoSuggestions"
+    app:boxBackgroundMode="none"
+    android:background="@null"
+
+     android:inputType="text|textNoSuggestions"
+    android:inputType="textVisiblePassword"
+    android:inputType="textFilter"
+     -->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:backgroundTintMode="@null"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAnswerText" />
 
 
     <Button
         android:id="@+id/btnOnayla"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="120dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="48dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTintMode="@null"
+        android:paddingVertical="4dp"
         android:text="ONAYLA"
+        android:textColor="#D5F1F8"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswerText" />
 
     <Button
         android:id="@+id/btnipucu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="60dp"
-        android:text="İPUCU"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTintMode="@null"
+        android:paddingVertical="4dp"
+        android:text="Harf"
+        android:textColor="#D5F1F8"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswerText" />
 
-    <Button
-        android:id="@+id/btnHile"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:text="hile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!--
+                    SSSsilllllll
+        <Button
+            android:id="@+id/btnHile"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:text="hile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

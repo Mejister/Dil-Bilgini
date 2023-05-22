@@ -1,4 +1,4 @@
-package com.kelimebilmece.room
+package com.test.kelimebilgini.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -3,69 +3,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kelimebilmece.settings.SettingsFragment">
+    android:background="@drawable/settings_bg"
+    tools:context="com.test.kelimebilgini.settings.SettingsFragment">
 
-    <TextView
-        android:id="@+id/tvAyarlar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Ayarlar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#102433"
         android:textAlignment="center"
-        android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvAyarlar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="5dp"
+            android:layout_marginTop="32dp"
+            android:text="Ayarlar"
+            android:textColor="#EBFAF7"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/tvSesler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
-        android:text="Sesler"
+        android:layout_marginTop="150dp"
+        android:text="Ses"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/swAudio"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAyarlar" />
+        app:layout_constraintTop_toBottomOf="@+id/settings_toolbar" />
 
     <Switch
         android:id="@+id/swAudio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="36dp"
-        android:text=""
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="32dp"
         android:checked="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAyarlar" />
-
-    <TextView
-        android:id="@+id/tvTitreşim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
-        android:text="Titreşim"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/swVibro"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSesler" />
-
-
-    <Switch
-        android:id="@+id/swVibro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="36dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swAudio" />
+        app:layout_constraintTop_toBottomOf="@+id/settings_toolbar" />
 
+    <!-- <TextView
+         android:id="@+id/tvTitreşim"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="24dp"
+         android:layout_marginTop="90dp"
+         android:text="Titreşim"
+         android:textColor="@color/black"
+         android:textSize="30sp"
+         android:textStyle="bold"
+         app:layout_constraintEnd_toStartOf="@+id/swVibro"
+         app:layout_constraintHorizontal_bias="0.1"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tvSesler" />
+
+
+     <Switch
+         android:id="@+id/swVibro"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="116dp"
+         android:layout_marginEnd="36dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/swAudio" />
+ -->
 </androidx.constraintlayout.widget.ConstraintLayout>
