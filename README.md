@@ -10,11 +10,11 @@
  ## MVVM (Model-View-ViewModel) mimarisine uygun olarak yazılmıştır.
 
  * Kullanılan Teknolojiler
-    * [Kotlin Coroutines 
-    * [Flow]
-    * [Room]
-    * [Retrofit]
-    * [Midjourney]
-    * [Firebase]
-    * [Cloud Firestore]
-    * [Lottie]
+    * Kotlin Coroutines 
+    * Flow
+    * Room
+    * Retrofit
+    * Midjourney
+    * Firebase
+    * Cloud Firestore
+    * Lottie
