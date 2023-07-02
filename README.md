@@ -1,5 +1,5 @@
-### Dil Bilgini
-## Zamana karşı bir bilgi yarışması
+# Dil Bilgini
+### Zamana karşı bir bilgi yarışması
 
 <p align="center">
 <img src="https://github.com/Mejister/Dil-Bilgini/assets/109960945/14300986-2553-481f-b6e1-b5aad7c40369.png" width="300">
