@@ -10,4 +10,13 @@
     <color name="reddy">#FAE4EA</color>
     <color name="greeny">#DEFADE</color>
     <color name="splashcolor">#F8F2C5</color>
+    <color name="turuncu">#F8F65B14</color>
+
+<!--    alttakiler yazının dünüşüm renkleri GameScreenFragmenttaki-->
+    <color name="mor">#A628BC</color>
+    <color name="sarımsı">#BAAB29</color>
+    <color name="yesil">#0B9623</color>
+    <color name="mavis">#1085E1</color>
+
+
 </resources>

@@ -1,9 +1,15 @@
 package com.test.kelimebilgini.gamescreen
 
 
+import android.app.Application
+import android.media.MediaPlayer
+import android.os.Handler
+import android.os.Looper
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
+import com.test.kelimebilgini.R
+import com.test.kelimebilgini.databinding.FragmentGameScreenBinding
 import com.test.kelimebilgini.repository.QuestionRepository
 import com.test.kelimebilgini.room.QuestionEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,6 +28,7 @@ data class GamesScreenDataState(
     val userAnswer: String = "",
     val questionEntity: QuestionEntity = QuestionEntity(),
     val tipAnswer: String = "",
+    val tickVisible: Boolean = false,
 
 
     //süre
@@ -33,20 +40,29 @@ data class GamesScreenDataState(
     // Whether the timer is currently paused
     val paused: Boolean = false,
 
+    //timer
+    val timerRemaining: Job? = null,
+    val timerTime: Long = 0L,
+    val timerFirstValue: Int = 25,
 
-    )
+    //müzik
+    val mediaPlayer: MediaPlayer? = null
 
+)
+
+const val TimerStartingTime: Long = 25L
 const val StartingTime: Long = 210L
 
 @HiltViewModel
 class GameScreenViewModel @Inject constructor(
 
     private val questionRepository: QuestionRepository,
-    firestore: FirebaseFirestore
+    firestore: FirebaseFirestore,
+    val application: Application
 
 
 ) : ViewModel() {
-
+    private lateinit var binding: FragmentGameScreenBinding
     val _state = MutableStateFlow(GamesScreenDataState())
     private val _uiState = MutableStateFlow<GameScreenUiState>(GameScreenUiState.Game)
     val uiState: StateFlow<GameScreenUiState> = _uiState
@@ -61,6 +77,7 @@ class GameScreenViewModel @Inject constructor(
 
         }
     }
+
 
     fun start() {
         // Create a new Job for the timer
@@ -90,6 +107,7 @@ class GameScreenViewModel @Inject constructor(
     }
 
     fun pause() {
+        timer()
         // Cancel the current job
         _state.value.job?.cancel()
 
@@ -112,6 +130,7 @@ class GameScreenViewModel @Inject constructor(
                         totalPoint = it.totalPoint - (it.point)
                     )
                 }
+                trueSound(false)
                 showAnswer()
                 delay(1500)
                 NextQuestion()
@@ -129,7 +148,12 @@ class GameScreenViewModel @Inject constructor(
     }
 
     fun resume() {
-
+        _state.value.timerRemaining?.cancel()
+        _state.update {
+            it.copy(
+                timerFirstValue = 25
+            )
+        }
         _state.value.job?.cancel()
         // Check if the timer is paused
         if (_state.value.paused) {
@@ -167,6 +191,53 @@ class GameScreenViewModel @Inject constructor(
         }
     } reset
     */
+    fun trueSound(boolean: Boolean) {
+
+        var mediaPlayer: MediaPlayer
+        mediaPlayer =
+            MediaPlayer.create(application, if (boolean) R.raw.truevoice else R.raw.failtone)
+        mediaPlayer?.start()
+
+        mediaPlayer?.setOnCompletionListener {
+            // Ses tamamlandığında yapılacak işlemler buraya gelebilir
+            mediaPlayer.release()
+        }
+    }
+
+
+    fun timer() {
+        // Create a new Job for the timer
+        val timerRemain = viewModelScope.launch {
+            // Set the elapsed time and duration of the timer
+            var timerTime = 0L
+
+
+            // Run the timer loop
+            while (timerTime < TimerStartingTime) {
+                delay(1000)
+                timerTime += 1
+                // Update the elapsed time and the time remaining
+                _state.update {
+                    it.copy(
+                        timerFirstValue = (TimerStartingTime - timerTime).toInt(),
+                        timerTime = timerTime
+                    )
+                }
+            }
+            // Süre bittiğinde timerTime değerini sıfırla ve tekrar 25 değerine döner
+            timerTime = 0L
+            _state.update {
+                it.copy(
+                    timerFirstValue = TimerStartingTime.toInt(),
+                    timerTime = timerTime
+                )
+            }
+        }
+        _state.update {
+            it.copy(timerRemaining = timerRemain)
+        }
+
+    }
 
     fun showAnswer() {
         _state.update {
@@ -200,12 +271,23 @@ class GameScreenViewModel @Inject constructor(
     }
 
     fun SucccesfullyAnswerPoint() {
+
+        trueSound(true)
         resume()
         _state.update {
-            it.copy(totalPoint = it.point + it.totalPoint)
-
+            it.copy(
+                totalPoint = it.point + it.totalPoint,
+                tickVisible = true
+            )
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            _state.update {
+                it.copy(tickVisible = false)
+            }
+        }, 400)
     }
+
 
     fun CheckAnswer() {
         if (_state.value.paused) {
@@ -228,6 +310,20 @@ class GameScreenViewModel @Inject constructor(
         }
     }
 
+
+    fun Pass() {
+        if (_state.value.paused) {
+            resume()
+        }
+        _state.update {
+            it.copy(
+                totalPoint = it.totalPoint - (it.point)
+            )
+        }
+        showAnswer()
+        NextQuestion()
+    }
+
     //make it private
     fun NextQuestion() {
         if (_state.value.questionNumber > 12) {
@@ -244,8 +340,8 @@ class GameScreenViewModel @Inject constructor(
                 tipAnswer = "_".repeat(it.questionlist[it.questionNumber + 1].answer.length)
             )
         }
-
     }
+
 
     fun Tip() {
         if (!_state.value.paused) {

@@ -28,6 +28,7 @@ class GameScreenFragment : Fragment() {
     private lateinit var binding: FragmentGameScreenBinding
     private val viewModel by viewModels<GameScreenViewModel>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -45,8 +46,21 @@ class GameScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.etAnswerText.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
 
-        lifecycleScope.launch {
 
+/*          HER HARFTE YAZI RENGİ DEĞİŞTİRME
+        binding.etAnswerText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val colors = arrayOf(Color.CYAN, Color.MAGENTA, Color.BLUE)
+                val colorIndex = (s?.length ?: 0) % colors.size
+                val color = colors[colorIndex]
+                binding.etAnswerText.setTextColor(color)
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })                                                                                    */
+
+        lifecycleScope.launch {
 
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
@@ -63,6 +77,7 @@ class GameScreenFragment : Fragment() {
                                     )
                                 )
                             }
+                            else -> {}
                         }
                     }
                 }
@@ -79,6 +94,13 @@ class GameScreenFragment : Fragment() {
                                 context?.theme
                             )
                         )
+
+                        binding.ivTick.visibility =
+                            if (it.tickVisible) View.VISIBLE else View.INVISIBLE
+
+
+
+
                         binding.etAnswerText.filters =
                             arrayOf(InputFilter.LengthFilter(it.questionEntity.answer.length))
                         binding.tvQestionText.text = it.questionEntity.question
@@ -93,6 +115,8 @@ class GameScreenFragment : Fragment() {
                         binding.mTextField.text = it.duration.toString()
 
                         binding.tvAnswerText.setText(it.tipAnswer)
+
+                        binding.tvTimerTime.text = it.timerFirstValue.toString()
 
 
                     }
@@ -117,10 +141,14 @@ class GameScreenFragment : Fragment() {
 
         binding.btnOnayla.setOnClickListener {
             viewModel.CheckAnswer()
+
         }
 
         binding.btnipucu.setOnClickListener {
             viewModel.Tip()
+        }
+        binding.btnpas.setOnClickListener {
+            viewModel.Pass()
         }
 
     }
