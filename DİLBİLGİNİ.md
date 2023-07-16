@@ -13,7 +13,7 @@
     * Kotlin Coroutines 
     * Flow
     * Room
-    * Retrofit
+    * Hilt
     * Midjourney
     * Firebase
     * Cloud Firestore
